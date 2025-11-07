@@ -55,3 +55,15 @@ Each fingerprint sample contains RSS values from multiple APs.
 - Data are grouped into **blocks** to reformulate localization as a classification task.  
 - For the LSTM, sequences are generated using sliding windows over consecutive samples within each block.  
 - The MLP uses individual fingerprints with distilled supervision.
+
+## Project Files and Notebooks
+
+| File | Purpose |
+|------|--------|
+| **utilities.py** | Shared helper functions used across the project (data loading, block labeling, metrics, logging, plotting helpers, etc.). |
+| **data_analysis.ipynb** | Exploratory data analysis (EDA): inspect RSS distributions, missing values, AP coverage, correlations; helps decide preprocessing choices. |
+| **data_processing.ipynb** | End-to-end preprocessing for training: builds temporal sequences for the **LSTM** and flattens single-scan inputs for the **MLP**; outputs train/val/test splits. |
+| **LSTM.ipynb** | Trains the **LSTM teacher** on sequential data; saves checkpoints and logits for distillation. |
+| **distilled_MLP.ipynb** | Performs **knowledge distillation**: loads the trained LSTM’s soft targets (with temperature) and trains the **MLP student** on single-scan inputs. |
+| **baseline_MLP.ipynb** | Trains a **non-distilled MLP** directly on original labels for a fair baseline against the distilled MLP. |
+| **error_analysis.ipynb** | Compares distilled vs. baseline models: error distributions (MLE/CDF), per-block breakdowns, and robustness under different conditions. |
