@@ -3,6 +3,9 @@
 This repository implements a **dual-model framework** for Wi-Fi indoor localization that combines a **Long Short-Term Memory (LSTM)** network and a **Multilayer Perceptron (MLP)** through **knowledge distillation**.  
 The method aims to achieve both **high accuracy** (via LSTM) and **low latency** (via MLP) by allowing the MLP to learn from the soft output distributions of the trained LSTM teacher.
 
+<img width="2097" height="1532" alt="image" src="https://github.com/user-attachments/assets/994ee686-e236-4138-b2d5-e0f38c4659a3" />
+
+
 The LSTM captures temporal dependencies in sequential signal data, while the distilled MLP approximates its predictive behavior using single-scan fingerprints.  
 This design provides an adaptable system that performs well in both **sequence-based** and **snapshot-based** localization scenarios.
 
