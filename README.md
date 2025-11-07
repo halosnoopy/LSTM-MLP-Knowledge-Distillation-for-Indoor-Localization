@@ -56,6 +56,8 @@ Each fingerprint sample contains RSS values from multiple APs.
 - For the LSTM, sequences are generated using sliding windows over consecutive samples within each block.  
 - The MLP uses individual fingerprints with distilled supervision.
 
+---
+
 ## Project Files and Notebooks
 
 | File | Purpose |
